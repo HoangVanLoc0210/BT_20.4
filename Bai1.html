@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<h3> Tổng các số chia hết cho 6 từ a -> b </h3> <br>
+<input type="number" id="a1" placeholder="Nhập vào a:">
+<input type="number" id="b1" placeholder="Nhập vào b:">
+<button onclick="kq1()"> Kết quả</button> <br>
+<p id="kq1"></p> <br> <hr>
+
+<h3> Tích các số chẵn và chia hết cho 5 từ a -> b </h3> <br>
+<input type="number" id="a2" placeholder=" Nhập vào a:">
+<input type="number" id="b2" placeholder=" Nhập vào b:">
+<button onclick="kq2()"> Kết quả</button> <br>
+<p id="kq2"></p> <br> <hr>
+
+<h3> Số lượng các chữ số lớn hơn 10 và chia hết cho 3 từ a -> b </h3> <br>
+<input type="number" id="a3" placeholder="Nhập vào a:">
+<input type="number" id="b3" placeholder="Nhập vào b:">
+<button onclick="kq3()"> Kết quả</button> <br>
+<p id="kq3"></p> <br> <hr>
+
+<body>
+<script>
+    function kq1() {
+        let a = parseFloat(document.getElementById("a1").value);
+        let b = parseFloat(document.getElementById("b1").value);
+        let tong = 0;
+        for ( let x = a; x <= b; x++){
+            if (x%6 === 0){
+            tong = tong + x
+            }
+        }
+        document.getElementById("kq1").innerHTML = 'Tổng của các số chia hết cho 6 từ ' + a + ' đến ' + b + ' là ' + tong
+    }
+    function kq2() {
+        let a = +document.getElementById("a2").value;
+        let b = +document.getElementById("b2").value;
+        let tich = 1
+        for ( let x = a; x <= b; x++){
+            if (x%2===0 && x%5===0){
+                tich = tich * x
+            }
+        }
+        document.getElementById("kq2").innerHTML = 'Tích của các số chẵn chia hết cho 5 từ ' + a + ' đến ' + b + ' là ' + tich
+    }
+    function kq3() {
+        let a = +document.getElementById("a3").value;
+        let b = +document.getElementById("b3").value;
+        for ( let x = a; x <= b; x++){
+            if (x>10 && x%3===0){
+                document.write('<p>' + x + '</p>');
+            }
+        }
+        //document.getElementById("kq3").innerHTML =  x
+        //document.write('<p>' + x + '</p> <br>');
+    }
+
+</script>
+</body>
+</html>
