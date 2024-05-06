@@ -5,7 +5,7 @@
     <title>Title</title>
 </head>
 <h3> Tổng các số chia hết cho 6 từ a -> b </h3> <br>
-<label for="a1"></label><input id="a1" placeholder="Nhập vào a:" type="number">
+<input id="a1" placeholder="Nhập vào a:" type="number">
 <input type="number" id="b1" placeholder="Nhập vào b:">
 <button onclick="kq1()"> Kết quả</button>
 <br>
@@ -25,8 +25,8 @@
 <input type="number" id="b3" placeholder="Nhập vào b:">
 <button onclick="kq3()"> Kết quả</button>
 <br>
-<p id="kq3"></p> <br>
-<hr>
+<p id="kq3"></p>
+<p id="kq4"></p> <br>
 
 <body>
 <script>
@@ -57,14 +57,16 @@
     function kq3() {
         let a = +document.getElementById("a3").value
         let b = +document.getElementById("b3").value
-        let string = ' '
+        let c = ' '
+        let d = 0
         for (let x = a; x <= b; x++) {
             if (x > 10 && x % 3 === 0) {
-                string = string + '<p>' + x + '</p>'
-                //document.write('<p>' + x + '</p>');
+                c = c + '<p>' + x + '</p>'//hoac la: c += '<p>' + x + '</p>'
+                d = d + 1 //hoac là: dem ++ ; dem +=1
             }
         }
-        document.getElementById("kq3").innerHTML =  string
+        document.getElementById("kq3").innerHTML =  c
+        document.getElementById("kq4").innerHTML = 'Số lượng các số lớn hơn 10 và chia hết cho 3 là: ' + d
     }
 
 </script>
