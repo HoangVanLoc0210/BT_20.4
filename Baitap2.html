@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<h1> Tính giai thừa của một số nguyên dương</h1>
+<body>
+<h3> Tính giai thừa của 1 số nguyên dương </h3>
+<input id="x" placeholder="Nhập số nguyên dương x: " type="number">
+<button onclick="kq()"> Kết quả </button>
+<p id="kq"></p>
+<script>
+    function kq() {
+        let x = +document.getElementById("x").value
+        let giaithua = 1
+        for (let i = 1; i <= x; i++) {
+           giaithua = giaithua * i
+            document.getElementById('kq').innerHTML = 'Giai thừa của ' + x + ' là: ' + giaithua
+        }
+    }
+</script>
+</body>
+</html>
